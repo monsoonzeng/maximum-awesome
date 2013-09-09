@@ -27,12 +27,12 @@ end
 
 def get_backup_path(path)
   number = 1
-    backup_path = "#{path}.bak"
+  backup_path = "#{path}.bak"
   loop do
     if number > 1
       backup_path = "#{backup_path}#{number}"
     end
-    if File.exists?(backup_path) or File.symlink?(backup_path)
+    if File.exists?(backup_path) || File.symlink?(backup_path)
       number += 1
       next
     end
